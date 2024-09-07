@@ -1,0 +1,43 @@
+
+/* Image Container Styles */
+.image-container {
+  width: 160px; /* Adjust width considering the gap */
+  height: 200px; /* Adjust height considering the gap */
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 1s ease;
+  transform-origin: bottom left;
+  filter: grayscale(1);
+}
+
+.image-container:hover {
+  transform: scale(1.1) rotate(-4deg); /* Slightly decreased scale for better fit */
+  filter: grayscale(0) brightness(1.1);
+}
+
+.delete-button {
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  background-color: gray;
+  color: white;
+  padding: 5px 5px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover .delete-button {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .image-container {
+    width: 160px; /* Adjust width for 4 columns */
+    height: 160px; /* Adjust height for 4 columns */
+  }
+
+  .delete-button {
+    padding: 4px 4px;
+    font-size: 1rem; /* Increase button size */
+  }
+}
